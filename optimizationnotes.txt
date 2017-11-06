@@ -1,0 +1,29 @@
+Compression
+ <Connector port="8080" protocol="HTTP/1.1"
+               connectionTimeout="20000"
+               redirectPort="8443" 
+	       compression="on"
+	       compressionMinSize="1024"
+	       noCompressionUserAgents="gozilla, traviata"
+	       compressableMimeType="text/html,application/javascript,text/css,application/json,text/xml,application/octet-stream" />
+ 
+ Add this to give the access to the folder and files.
+ <servlet>
+    <!-- List files in /ws-definitions -->
+    <servlet-name>ListWsDefinitions</servlet-name>
+    <servlet-class>org.apache.catalina.servlets.DefaultServlet</servlet-class>
+    <init-param>
+        <param-name>debug</param-name>
+        <param-value>0</param-value>
+    </init-param>
+    <init-param>
+        <param-name>listings</param-name>
+        <param-value>true</param-value>
+    </init-param>
+    <load-on-startup>100</load-on-startup>
+</servlet>
+
+<servlet-mapping>
+    <servlet-name>ListWsDefinitions</servlet-name>
+    <url-pattern>/ws-definitions/*</url-pattern>
+</servlet-mapping>

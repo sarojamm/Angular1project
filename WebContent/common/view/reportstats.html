@@ -1,0 +1,57 @@
+<div id="rptstatswin"  class="row  boxitem boxborder">    
+  <div class="row-height">
+      <div class="col-xs-12 col-sm-3 col-md-3  col-lg-2 col-sm-height container-fluid boxitem boxborder">
+        <div class="inside inside-full-height  ">
+          <div class="content alert alert-info fade in "> 
+                        To see the report results go to User Report links=>Report instance link. This view will have all the reports with the status(Complete, Running, Aborted).
+                        Status with complete reports will have clickable green button in the location column. 
+				        To see the result data of the report in table and chart view, click on the green view button in the location column.   
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-5 col-md-5  col-lg-5  col-sm-height col-sm-top container-fluid   boxitem boxborder">
+         <div class="inside inside-full-height   ">    
+             <div class="content" >
+                  Top 5 long running reports     
+                  <table class="table table-condensed table-bordered table-hover table-striped table-responsive">
+					  <thead  class="black whitetext">
+					    <tr>      
+					      <th>ReportId</th>
+					       <th>No Days</th> 
+					      <th>Status</th>
+					      <th>Run Time Minutes</th>
+					      <th>User Name</th> 
+					    </tr>
+					  </thead>
+			             <tr 	ng-repeat="item in  toprunningrepts "> 
+				             <td>{{item.reportId}}</td><td>{{item.noDays}}</td><td>{{item.status}} </td>
+				             <td>{{item.runTimeMinutes}}</td><td>{{item.userName}}</td>
+			             </tr> 
+			      </table>          
+             </div>
+         </div>
+      </div>
+      <div class="col-xs-12 col-sm-4 col-md-4  col-lg-5 col-sm-height col-sm-top container-fluid boxitem boxborder">
+        <div class="inside inside-full-height  ">
+          <div class="content title2  ">
+                  Report Stats	                
+	              <table class="table table-condensed table-bordered table-hover table-striped table-responsive">
+					  <thead  class="black whitetext">
+					    <tr>      
+					      <th>No Days</th>
+					      <th>No Reports</th>
+					      <th>Status</th>
+					      <th>Run Time Minutes</th>
+					      <th>Avg Run Time</th> 
+					    </tr>
+					  </thead>			              
+			             <tr 	ng-repeat="item in  reportstats "> 
+				             <td>{{item.noDays}}</td><td>{{item.numReports}}</td><td>{{item.status}} </td>
+				             <td>{{item.runTimeMinutes}}</td><td>{{item.avgRunTime}}</td>
+			             </tr>			             
+			      </table>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>

@@ -1,0 +1,147 @@
+*{
+	margin:0px;
+	padding:0px;
+} 
+#mainrow{ 
+ 	margin:0px;
+	padding:0px;  
+}
+#rptinfoleft{    
+     overflow:auto;  
+}
+ #refstats,#refstats2{
+	position: absolute;
+	left: 320px;
+	top :5px;
+	z-index:10;
+}
+#home {
+	position: absolute;
+	font-weight: bold;
+	font-size: 14px;
+	border:1px solid grey;	 
+	background:#E7E7E7; 
+	border-radius: 10px; 
+	text-align: center; 
+	right: 20px;
+	top :5px;
+	z-index:10;
+	width: 20px;
+	height: 20px;
+} 
+#chartleftoption{	 
+	overflow:auto;
+}
+ 
+.appModel{
+	 
+	top:50px;
+	left:50px;
+}
+.red{
+	background:red;
+}
+@keyframes example {
+    0%   {background-color: pink;}
+    25%  {background-color: yellow;}
+    50%  {background-color: orange;}
+    100% {background-color: grey;}
+}
+.highlight{
+	 background-color:  #eeeeee;
+	 animation-name: example;
+     animation-duration: 4s; 
+     animation-iteration-count: infinite;
+}
+.yellow{
+	background:yellow;
+}
+.blue{
+		background:blue;
+}
+.noscroll { overflow: hidden; }
+.viewWaiting{
+	background:yellow;
+	cursor: not-allowed  !important;
+}
+.viewComplete{
+	background:green  ;
+}
+.viewFailed{
+	background:red;
+	cursor: not-allowed  !important;
+}
+.viewRunning{
+	background:orange;
+	cursor: not-allowed  !important;
+}
+.viewAborted{
+	background:brown;
+	cursor: not-allowed  !important;
+}
+
+
+.pad10margin{
+	margin:10px;
+    padding:10px;	
+}
+.pad5margin{
+	margin:5px;
+    padding:5px;	
+}
+.chartpadding{
+	margin-right: 2px;
+    margin-left: 2px;
+}
+.pad2margin{
+	margin:2px;
+    padding:2px;	
+}
+.pad1margin{
+	margin:1px;
+    padding:1px;	
+}
+.pad0margin{
+	margin:0px;
+    padding:0px;	
+}
+.boxitem{
+	dispaly: webkit-box; 
+	-webkit-box-flex: 1;
+	-moz-box-flex: 1; 	  
+}
+.boxborder{ 
+	background:#E7E7E7; 
+	border-radius: 10px; 
+    border:1px solid grey;
+    align-items:stretch;
+} 
+.blacktext{
+    color: #000;
+    text-transform:capitalize;
+} 
+.greytext{
+    color: grey;
+    text-transform:capitalize;
+}
+.title{
+	color: #000; 
+	font-size: 1.2em; 	
+	text-transform:capitalize; 
+}
+.title2{
+	color: #000000; 
+	font-size: 1em; 
+	border-radius: 10px;	
+	text-transform:capitalize; 
+	padding-top: 0.10em;
+}
+.ddmsg2{
+	color: #000000; 	
+	border-radius: 10px;	
+	padding-top: 0.10em;
+}
+.fill { 
+   min-height: 100%;
+    height: 100%;
+}

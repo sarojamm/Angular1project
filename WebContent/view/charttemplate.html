@@ -1,0 +1,87 @@
+<div  id="head"><div  my_header seconds={{seconds}} loginuid="{{loginuid}}" is_menu="isMenu" site_title={{title}}  appid={{appid}}   > </div></div>     
+ <span id="home" title={{tooltipmsgs.home}}  data-toggle="collapse" data-target="#head"  >
+                 H </span>
+ <div class="row boxborder">
+  <div class="row-same-height">  
+  <div id="filter_section" class="col-xs-8 col-md-6 collapse ">   
+     <div>
+          <div ng-include src="'view/treemenu.html'"> </div> 
+    </div>  
+  </div> 
+  <div id="chart_view_section"  class=" tab-pane">  
+    <div  id="ltewrapper" ng-show="isMenu"  class="row">   
+      <div class="row boxborder">
+        <div class="row-same-height">           
+          <div id="report_info" class="col-xs-10 col-sm-4 col-md-3  col-lg-3 col-sm-height col-top pull-left  collapse">          	  
+             <div  ng-repeat="info in  reportInfo" >
+                  <span class="pad2margin"><b>{{info.key}}:</b>{{info.value}}</span>
+               </div>
+          </div>        
+        </div>
+      </div>    
+      <div class="row ">
+         <div class="row-same-height">           
+	          <div class="col-xs-12 col-sm-6 col-md-6  col-lg-5 col-sm-height col-top pull-left  ">
+	           <div id="optionsdiv" class="pad1margin  boxborder " ><div title={{pagetitle}}	class="whitetext title2 textwrap  "> {{pagetitle}} </div>
+	              <div ng-include="'common/view/tabsview.html'"  >    </div></div>
+	          </div>
+	          <div class="col-xs-12 col-sm-6 col-md-6  col-lg-6 col-sm-height col-top pull-left  ">           
+	              <div ng-show="tableoptions" class="pad1margin  boxborder ">
+				         <label title={{tooltipmsgs.filter}} >Filter:</label> <input type=text id="txtSearch" style="width:200px;">&nbsp;&nbsp;&nbsp;&nbsp; 
+						 <label id="formulatext"> 
+						        <input id="formulaChk" type="checkbox" ng-model="isFormula"> 
+						        <span ng-show="isFormula">Hide</span>
+						        <span ng-hide="isFormula">Show</span> Formula </label>	   &nbsp;&nbsp;&nbsp;&nbsp;	
+	                    <!--  <label >Table Text Size &nbsp;&nbsp;&nbsp;&nbsp; <div   style="width:100px;" id="slidtbltxtsz" ></div></label>  -->
+	                     <label > Text Size &nbsp;&nbsp;&nbsp;&nbsp; <div   style="width:100px;" id="slidpgtxtsz" ></div></label> 
+	                     <label >Frozen Column:  <div   style="width:100px;" id="slidfrozencol" ></div></label> 
+	               </div>				       
+				  <div ng-hide="tableoptions"  class="pad1margin  boxborder">		    	                   
+			          <div class="row ">
+                           <div class="row-same-height">    
+                                 <label><input id="legendChk" type="checkbox" ng-model="isLegend"><span >Show</span> Legend </label>	
+								      &nbsp;&nbsp;&nbsp;&nbsp;
+							     <label><input id="trendChk" type="checkbox" ng-model="isTrend"> <span>Show</span> Trend </label>	
+							            &nbsp;&nbsp;&nbsp;&nbsp;
+							     <label> <input id="trendChk" type="checkbox" ng-model="isSaveLegend"><span >Enable</span> Save Legend. </label>	
+                                        &nbsp;&nbsp;&nbsp;&nbsp;
+                                 <label><input id="basicChk" type="checkbox" ng-model="isBasic"><span >Advance</span> Chart </label>					   
+							            &nbsp;&nbsp;&nbsp;&nbsp; 
+							     <label class="pull-left"> Select Chart Type: &nbsp;&nbsp;&nbsp;&nbsp;</label>  
+		                                <select class="selectwidth130 pull-left" id="charttype" ng-model="chdata.selectedcharttype" ng-options="item for item in chartTypes" > </select>  
+			      		   </div>  
+			          </div>   
+			      </div>
+			  </div>
+         </div>
+      </div>
+    </div>
+	<div class="tab-content ">      
+        <div class="tab-pane " id="slicktabletab"> 
+			  <div id="loading-div">
+                   <img src="images/loading.gif" class="ajax-loader"/>
+              </div>	
+               <div ng-show="isdata"  class="row boxborder">		   
+					  <div id="myGrid" ></div> 
+					  <div class="footer navbar-default">
+		    			    <div id="pager" title={{tooltipmsgs.pager}}  ></div>
+		    		  </div> 
+    		   </div>
+    		   <div ng-hide="isdata"  class="row nodatamsg boxborder ">
+                     {{loadmsg}}- {{data}}
+               </div>
+        </div>      
+        <div  class="tab-pane active" id="chart"> 
+	 	  <div id="chart_section" allchdata="chdata" resultdata="reportdata" ch_title="rt"  stock_chart ></div>
+	  </div> 
+    
+   	<div class="tab-pane" id="tab4"><a href="#" class="export">Export CSV</a></div>
+	<div class="tab-pane" id="map"> 	  		
+		<div id="mymapcontainer" style="height: 600px; width: 365px; max-width: 600px; margin: 0 auto"></div>
+			<div id="drag"></div>
+			<div id="drop"></div>
+	</div> 	
+  </div>
+</div>
+</div>
+</div>

@@ -1,0 +1,32 @@
+ <div id="chartleftoption" class="row">
+          <div class="col-xs-6 col-sm-4 col-md-10 col-lg-10 col-sm-height col-top pull-left pad1margin "> <div   class="row "> 
+			       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-10  ">
+			             <label class="pull-left">Select Data sets</label></div>
+		           <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10 ">
+		                 <select id="seldsopt" size="7" class="pull-left" id="dataset" ng-click="processSelectedDataset('processSelectedDataset');" ng-model="chdata.selecteddataset"
+		                  ng-options="item.name for item in datasets  | orderBy:'name'" multiple ng-multiple="true" ></select>      
+	       </div> </div></div>   
+          <div class="col-xs-6 col-sm-4 col-md-10 col-lg-10 col-sm-height col-top pull-left pad1margin "><div   class="row ">      
+			       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-10  ">
+			             <label class="pull-left">Select Left Axis </label></div>
+		           <div class="col-xs-12 col-sm-12 col-md-12 col-lg-10  ">
+		                 <select  id="sellxopt" size="10" class="pull-left" id="laxis" ng-click="processSelectedLaxis('processSelectedLaxis');" ng-model="chdata.selectedlaxis" ng-options="item.name for item in yaxis  | orderBy:'name'" multiple ng-multiple="true" ></select>      
+	       </div></div></div>
+	       
+	        <div class="col-xs-5 col-sm-4 col-md-10 col-lg-10 col-sm-height col-top pull-left pad1margin "><div   class="row ">  
+			       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-10  ">
+			             <label class="pull-left">Select Right Axis </label></div>
+		           <div class="col-xs-12 col-sm-12 col-md-12 col-lg-10  ">
+		                 <select id="selrxopt" size="10" class="pull-left" id="raxis" ng-click="processSelectedRaxis('processSelectedRaxis');"  ng-model="chdata.selectedraxis" ng-options="item.name for item in yaxis  | orderBy:'name'" multiple ng-multiple="true" ></select>       
+	       </div> </div></div>
+	 
+	      
+	       
+	       <div class="col-xs-7 col-sm-5 col-md-10 col-lg-10 col-sm-height col-top pull-left pad1margin "><div   class="row "> 
+			       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-10  ">
+			             <label class="pull-left"><br>Selected Legends(Click on the item to remove from the chart.)</label></div>
+		           <div class="col-xs-12 col-sm-12 col-md-12 col-lg-10  ">
+		                 <select size="6" class="pull-left" id="legend" ng-click="processSelectedLegend(' processSelectedLegend .');"  ng-model="chdata.selectedlegend" ng-options="item.name for item  in legendvalues  | orderBy:'name'"  multiple ng-multiple="true" ></select>     
+	       </div> </div></div>
+	      
+</div> 

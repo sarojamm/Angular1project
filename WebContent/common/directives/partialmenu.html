@@ -1,0 +1,73 @@
+ 
+<ul  class="nav nav-tabs" > 
+    <li class="dropdown">
+            <a data-toggle="dropdown" class="dropdown-toggle" href="#"><span class="blacktext">Ext Links</span> <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+                <li   ><a href="https://mydummysite.com:8080/cgi-bin/login.cgi" target="_blank" ><span class="blacktext">New Chicago Web Site</span></a></li>
+                <li   ><a href="http://mydummysite.com:8080/login" target="_blank"><span class="blacktext">Notification Tool</span></a></li>
+                <li   ><a href="http://mydummysite.com:8080/NPT/login.htm" target="_blank"><span class="blacktext">NPT</span></a></li>
+               
+            </ul>
+   </li>
+       <li class="dropdown">
+            <a data-toggle="dropdown" class="dropdown-toggle" href="#"><span class="blacktext">User Report Links</span> <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+                <li   ><a href="/ltewebver2/#/userReports"   ><span class="blacktext">User Reports</span></a></li>
+                <li   ><a href="/ltewebver2/#/reportbrowser"  ><span class="blacktext">Report Instanace</span></a></li>
+           </ul>
+   </li>  
+   <li   ><a href="/ltewebver2/#/reportInfo/{{reportId}}/true/{{randtime}}"  ><span class="blacktext">Refresh Stats</span></a></li> 
+  <!--  <li   ><a href="/{{appid}}/sah.htm" target="_parent"><span class="blacktext">Structured Ad Hoc</span></a></li>
+   --> <li   ><a href="http://mydummysite.com:8080" target="_blank"><span class="blacktext">Feedback</span></a></li>
+<!-- <li> <a href="#" data-toggle="modal" data-target="#help"><span class="blacktext">Help</span></a></li> -->
+    <li> <a  title='Click here to see known issues and workarounds.'  href="#" data-toggle="modal" data-target="#knownissues"><span title={{tooltipmsgs.knownissuestitle}} class="blink_me blacktext">Known Issues</span></a></li>
+    <li> <a  title={{tooltipmsgs.knownissuestitle}}  href="#" data-toggle="modal" data-target="#tips"><span title={{tooltipmsgs.knownissuestitle}} class="blink_me blacktext">Tips</span></a></li>
+    <li> <a href="/myprofile/#/"  ><span class="blacktext">Home</span></a></li>
+    <li> <a href="/jqueryproject/"  ><span class="blacktext">jQueryProject</span></a></li> 
+</ul>
+<div class="modal fade" id="help" tabindex="-1" role="dialog" aria-labelledby="helpLabel" aria-hidden="true">
+	 <div help_doc pagetitle="Help Documents"></div>  
+</div>
+<div class="modal fade" id="knownissues" tabindex="-1" role="dialog" aria-labelledby="helpLabel" aria-hidden="true">
+<div class="modal-dialog appModel">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">
+					<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+				</button>
+				<h4 class="modal-title" title={{tooltipmsgs.download}} id="myModalLabel">Known Issues</h4>
+			</div>
+			<div class="modal-body  pad1margin">
+			    <table border=1 > 
+			      <tr><th >Issue</th><th > WorkAround  </th></tr>
+			           <tr><td >Table Header is not visible</td><td >Toggle Hide/show Options check box.  </td></tr>
+<!-- 			           <tr><td >Help Docs not visible</td><td > Toggle Hide/show Options check box.  </td></tr> -->
+ 			           <tr><td >Chart is not filled in defined block. </td><td >Toggle Hide/show Options check box.</td></tr>  
+			           <tr><td >First row of the table data is not visible</td><td > Click on the header of any column which will invoke the sorting and redraws the data on the sceen.</td></tr>
+			    </table>  
+			</div>
+		</div>
+</div>	  
+</div>
+
+
+
+
+<div class="modal fade" id="tips" tabindex="-1" role="dialog" aria-labelledby="helpLabel" aria-hidden="true">
+<div class="modal-dialog appModel">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">
+					<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+				</button>
+				<h4 class="modal-title" title={{tips}} id="appTips">Some Tips</h4>
+			</div>
+			<div class="modal-body  pad1margin" >
+			  <ol > 
+                  <li ng-repeat="info in  tips" class="pad2margin"> {{info}}</li>  
+			  </ol>
+			</div>
+		</div>
+</div>	  
+</div>
+

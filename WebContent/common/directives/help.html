@@ -1,0 +1,19 @@
+<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">
+					<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+				</button>
+				<h4 class="modal-title" id="myModalLabel">Help Documents</h4>
+			</div>
+			<div class="modal-body ">
+			<table > 			  
+			 	<tr ng-repeat="(key, value) in fileList | filter:{ $index: '!0'}">
+				     <td>{{$index +1}}&nbsp;</td>
+				     <td> <a class="pull-left" target="_self" href="{{value}}" download="{{value}}">&nbsp; {{key}}</a></td>
+				</tr> 
+			</table> 
+			</div> 
+		</div>
+</div>
+ 

@@ -1,0 +1,88 @@
+ <div  id="head"><div  my_header seconds={{seconds}} loginuid="{{loginuid}}" is_menu="isMenu" site_title={{title}}  appid={{appid}} randtime={{randtime}}  > </div></div>     
+ <span id="home" title={{tooltipmsgs.home}}  data-toggle="collapse" data-target="#head"  >
+                 H </span>		    
+                   <div id="maincontent" class="row container-fluid ">
+<div  id="rptstats" ng-show="isMenu"    class="row col-xs-12 col-sm-12 col-md-12  col-lg-12 col-sm-height col-top pull-left ">     
+         <div ng-include="'common/view/reportstats.html'"  >   </div>
+</div>
+<div class="col-xs-12 col-sm-12 col-md-12  col-lg-12">
+	<div id="mainrow"  class="row boxborder row-same-height">   
+	     <div id="rptinfonav" class="yellow col-xs-12 col-sm-12 col-md-12  col-lg-12 col-sm-height col-top pull-left boxitem boxborder" ng-include="'common/view/rptInfotabsview.html'"  >   </div>
+	
+	     <div id="rptinforight" class="col-xs-12 col-sm-8 col-md-8  col-lg-8 col-sm-height col-top pull-left container-fluid boxitem boxborder fullheight tab-content">
+		       <div class="tab-pane active " id="reportBrowsertab"   > 			   
+			   	  	    <div id="rptinstdata"  class=" content inside inside-full-height" id="rptinstdata" iscrud="yes" isview="view" isdel="del" data="rptInstancedata"
+							isrun="run"   tbltitle="tabletitle"   class="container-fluid boxitem boxborder   "
+							windid="rptinforight"  base_table></div>
+				  			
+			   </div> 			 
+			   <div class="tab-pane " id="userFormulatab"> 
+				   <div class="container-fluid boxitem boxborder" 	ng-repeat="(key, value) in  formulasdata ">
+	                    <span class="blacktext pad2margin"> {{value["Formula Name"]}} :</span><br> {{value["Formula"]}}
+				   </div>
+	           </div>      
+		       <div class="tab-pane   " id="elemDetailtab"> 
+				  	<div class="boxitem boxborder" 	ng-repeat="(key, value) in  elemDetails ">
+						<div ng-repeat="(key1, value1) in  value ">  
+						    <div class="animate-switch-container"    ng-switch on="key1">					           							
+								<div class="animate-switch" ng-switch-when="market"> <span class="blacktext pad2margin"> {{key1}} :</span> {{value1.marketName}}</div>
+								<div class="animate-switch" ng-switch-when="mmePool"> 
+								     <span class="blacktext pad2margin"> {{key1}} :</span>  {{value1["mmePoolName"]}} <br>
+	                                 <span class="blacktext pad2margin"> mmePoolShortname :</span>  {{value1["mmePoolShortname"]}}
+	                            </div>
+								<div class="animate-switch" ng-switch-when="mmepool">
+								     <span class="blacktext pad2margin"> {{key1}} :</span>  {{value1["mmePoolName"]}} <br>
+	                                 <span class="blacktext pad2margin"> mmePoolShortname :</span>  {{value1["mmePoolShortname"]}}
+	                            </div>
+								<div class="animate-switch" ng-switch-when="region"> 
+								     <span class="blacktext pad2margin"> {{key1}} :</span>  {{value1["regionName"]}} <br>
+							         <span class="blacktext pad2margin"> regionShortname :</span>  {{value1["regionShortname"]}} 
+							    </div>							
+								<div class="animate-switch" ng-switch-when="SGW">"SGW" => <span class="blacktext pad2margin"> {{key1}} :</span>   {{value1}}</div> 										  	    
+								<div class="animate-switch" ng-switch-when="PGW">pgw div => <span class="blacktext pad2margin"> {{key1}} :</span>   {{value1}}</div>
+								<div class="animate-switch" ng-switch-when="pgwLocationShortname"></div>					
+								<div class="animate-switch" ng-switch-when="schemaIid"></div>						
+								<div class="animate-switch" ng-switch-when="iid"></div>		
+								<div class="animate-switch" ng-switch-when="eld"></div>		
+								<div class="animate-switch" ng-switch-when="mmeShortname"></div>		
+								<div class="animate-switch" ng-switch-when="timezone"></div>	
+								<!--  <div class="animate-switch" ng-switch-when="sgwLocationShortname"></div>										
+								<div class="animate-switch" ng-switch-when="sgwShortname"></div> -->
+								<div class="animate-switch" ng-switch-when="drAppServer"></div>	
+								<div class="animate-switch" ng-switch-default> <span class="blacktext pad2margin"> {{key1}} :</span>  {{value1}} </div>                      
+	                        </div>                                       
+						</div>		 
+					</div>
+	           </div> 
+		 </div>
+	
+	
+	     <div id="rptinfoleft"  class="col-xs-12 col-sm-4 col-md-4  col-lg-4 col-sm-height col-top pull-left  container-fluid fullheight boxitem boxborder  tab-content">
+	     <div><span class="blacktext pad2margin"> reportId :</span> {{reportInfo.reportId}}</div>
+	        <div><span class="blacktext pad2margin"> reportName :</span> {{reportInfo.reportName}}</div>
+	        <div><span class="blacktext pad2margin"> reportLevel :</span> {{reportInfo.reportLevel}}</div>
+	        <div><span class="blacktext pad2margin"> reportType :</span> {{reportInfo.reportType}}</div>	                    
+	        <div><span class="blacktext pad2margin"> userName :</span> {{reportInfo.userName}}</div>
+	        <div><span class="blacktext pad2margin">dateCreated :</span> {{reportInfo.dateCreated | date : format : timezone}}</div> 
+	        <div><span class="blacktext pad2margin">endDate :</span> {{reportInfo.endDate | date : format : timezone}}</div>    
+	        <div><span class="blacktext pad2margin"> daysToTrend :</span> {{reportInfo.daysToTrend}}</div>
+	        <div  > <span class="blacktext pad2margin"> Element Type :</span> {{eleTypes.0}} </div>
+	        <div  > <span class="blacktext pad2margin"> content :</span> {{data.content}} </div>
+	        <div>The follwoing will be optional can be removed. </div>
+	        <div><span class="blacktext pad2margin"> nFilter :</span> {{reportInfo.nFilter}}</div>
+	        <div><span class="blacktext pad2margin"> isSahRpt :</span> {{reportInfo.isSahRpt}}</div>
+	        <div><span class="blacktext pad2margin"> custRpt :</span> {{reportInfo.custRpt}}</div>
+	        <div><span class="blacktext pad2margin"> reportUsage :</span> {{reportInfo.reportUsage}}</div>	                   
+	        <div><span class="blacktext pad2margin"> excludeTotals :</span> {{reportInfo.excludeTotals}}</div>	                   
+	        <div><span class="blacktext pad2margin"> showFreq :</span> {{reportInfo.showFreq}}</div>
+	        <div><span class="blacktext pad2margin"> excHols :</span> {{reportInfo.excHols}}</div>
+	        <div><span class="blacktext pad2margin"> dispRawPegs :</span> {{reportInfo.dispRawPegs}}</div>
+	        <div><span class="blacktext pad2margin"> isSahRpt :</span> {{reportInfo.isSahRpt}}</div> </div>
+	
+	
+	
+	
+	</div>
+
+</div>
+</div>

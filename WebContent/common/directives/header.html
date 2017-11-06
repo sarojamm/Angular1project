@@ -1,0 +1,24 @@
+ <div class="row boxborder">
+    <div class="row-same-height">        
+         <div class="col-xs-12 col-sm-4 col-md-34  col-lg-4 col-sm-height col-top pull-left  ">
+             <div class="title pad1margin  "  > {{siteTitle}}  &nbsp;&nbsp;&nbsp;
+        </div>
+        </div>
+        <div class="col-xs-12 col-sm-5 col-md-5  col-lg-5 col-sm-height col-middle pull-left  ">
+                <div   ng-include="'common/directives/partialmenu.html'" ng-init="appid=appid; submenu = displayTree; classid=''; class=' nav nav-tabs'" ></div>	         
+        </div>
+        <div class="col-xs-12 col-sm-3 col-md-3  col-lg-3 col-sm-height col-middle pull-left  ">
+            <div class="row row-same-height boxborder container-fluid">  
+               
+               
+               <div  class="col-xs-4 col-sm-12 col-md-6  col-lg-4 col-sm-height col-middle pull-left   " ng-show="isrefersh">
+                 Total Time : {{seconds}}&nbsp;&nbsp;&nbsp;</div>
+               <div class="col-xs-4 col-sm-12 col-md-6  col-lg-4 col-sm-height col-middle pull-left   ">
+                     <span title='Select/unselect  to see table and chart options.' >  <input id="menuChk" type="checkbox" ng-model="isMenu">           
+                           <span >Show</span>  Options </span>
+		       </div>
+		        <div class="col-xs-3 col-sm-12 col-md-6  col-lg-4 col-sm-height col-middle pull-middle   "> Hello {{loginuid}}</div> 
+		     </div>
+		</div> 
+    </div>
+</div>

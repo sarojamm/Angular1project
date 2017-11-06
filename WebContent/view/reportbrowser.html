@@ -1,0 +1,18 @@
+<div  id="head"><div  my_header seconds={{seconds}} loginuid="{{loginuid}}" is_menu="isMenu" site_title={{title}}  appid={{appid}}   > </div></div>     
+<span id="home" title={{tooltipmsgs.home}}  data-toggle="collapse" data-target="#head"  >
+                 H </span>    
+                   
+<div class="row boxborder">
+  <div class="row-same-height">  
+    <div id="chart_view_section"  class=" tab-pane">  
+     <div id="rptstats" ng-show="isMenu">
+          <div  ng-include="'common/view/reportstats.html'"  >   </div>
+     </div>
+     <div id="mainrow2"  class="row boxborder row-same-height">
+         <div id="rptinstdata2" class=" content inside inside-full-height"  iscrud="yes" isview="view" isdel="del" data="data"
+						isrun="run"   tbltitle="tabletitle"  class="container-fluid boxitem boxborder   "
+						windid="mainrow2"  base_table></div>
+     </div> 
+     </div>
+  </div>
+</div>

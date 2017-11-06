@@ -1,0 +1,22 @@
+<ul  class="nav nav-tabs"  role="tablist"> 
+   <li id="tabletab" class="" ><a href="#slicktabletab" role="tab" data-toggle="tab"  ng-click="setTableOption(true);"><span class="blacktext">Table</span></a></li>
+   <li id="charttab" class=""><a href="#chart"   role="tab" data-toggle="tab" ng-click="setTableOption(false);"><span class="blacktext">Chart</span></a></li> 
+   <li id="charttabnew" ><a href="{{chartUrl}}" target="_blank" ng-click="setTableOption(false);"><span class="blacktext"> Chart in Newwindow</span>	</a></li>
+   <li><a href="#infotab" role="tab" data-toggle="tab">
+       <span class="blacktext collapsed" data-toggle="collapse" data-target="#report_info"  >
+                 Report Input Details</span> </a></li> 
+   <li><a href="mailto:?subject={{rt}} &body={{absUrl}}"><span class="blacktext">Email Report</span>	</a></li>
+   <li><a href="{{mapurl}}" target="_blank"><span class="blacktext"> Map Display(Beta) </span>	</a></li>
+   <li><a href="{{editurl}}" target="_blank"><span class="blacktext">Rpt Config</span>	</a></li> 
+    <li><a href="{{appleturl}}" target="_blank"><span class="blacktext">Applet Table</span>	</a></li>   
+   <li class="dropdown">
+            <a data-toggle="dropdown" class="dropdown-toggle" href="#"><span  title={{tooltipmsgs.download}}  class="blacktext">Download</span> <b class="caret"></b></a>
+            <ul class="dropdown-menu">              
+                <li><a href="{{xlsurl}}" target="_blank"><span class="blacktext">XLS</span>	</a></li>
+                <li><a href="{{csvurl}}" target="_blank"><span class="blacktext">CSV</span>	</a></li>
+                <li><a href="{{pdfurl}}" target="_blank"><span class="blacktext">PDF</span>	</a></li>
+            </ul>
+   </li>
+</ul>     	 
+
+  
